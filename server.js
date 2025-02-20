@@ -10,9 +10,10 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cookieparser());
 
+
 // mongoodb
 mongoose.connect(`mongodb+srv://kingsobhan57:jxU4C49WErQk1Zjp@shop.v3cx8.mongodb.net/?retryWrites=true&w=majority&appName=shop`).then(db=>{
-    console.log("mongoodb connected.")
+    console.log("mongoodb connectedd.")
 }).catch(e=>{
     console.log("mongodb error", e)
 })
