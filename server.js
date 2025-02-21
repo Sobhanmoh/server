@@ -12,8 +12,8 @@ app.use(cookieparser());
 
 
 // mongoodb
-mongoose.connect(`mongodb+srv://kingsobhan57:jxU4C49WErQk1Zjp@shop.v3cx8.mongodb.net/?retryWrites=true&w=majority&appName=shop`).then(db=>{
-    console.log("mongoodb connectedd.")
+mongoose.connect(`mongodb+srv://kingsobhan57:IakHc0pdrXB11ZO6@school.zijq4.mongodb.net/?retryWrites=true&w=majority&appName=school`).then(db=>{
+    console.log("mongoodb connected.")
 }).catch(e=>{
     console.log("mongodb error", e)
 })
@@ -36,4 +36,3 @@ app.listen(PORT,()=>{
 
 
 
-//kingsobhan57                    jxU4C49WErQk1Zjp
