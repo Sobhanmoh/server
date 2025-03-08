@@ -47,14 +47,13 @@ module.exports = {
             if(school){
                 const isAuth = await bycrypt.compare(req.body.password, school.password);
                 if(isAuth){
-                    const token = jwt.sign(
-                        {id: school._id,
+                    const token = jwt.sign({
+                        id: school._id,
                         school_id: school._id,
                         school_name: school.school_name,
                         emage_url: school.email,
                         owner_name: school.owner_name,
-                        role: "school",}
-                        ,jwtSecret);
+                        role: "school",},jwtSecret);
 
                     const jwtSecret = process.env.JWT_SECRET;
 
@@ -89,7 +88,7 @@ module.exports = {
     },
     getSchoolOwnData: async (req, res) => {
         try {
-            const id = "";
+            const id = req.user.id;
             const school = await School.findOne({_id: id});
             if(school){
                 res.status(200).json({success: true, school});
@@ -105,7 +104,7 @@ module.exports = {
 
      updateSchool: async (req, res) => {
         try {
-        const id = "";
+        const id = req.user.id;
         form.parse(req, async (err, fields, files) => {
 
         const school = await School.findOne({_id: id});

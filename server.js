@@ -4,6 +4,8 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const cookieparser = require('cookie-parser');
 
+
+const schoolRouter = require("../routers/school.router");
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -19,11 +21,8 @@ mongoose.connect(`mongodb+srv://kingsobhan57:IakHc0pdrXB11ZO6@school.zijq4.mongo
 })
 
 
-app.get("/test", (req, res)=>{
-    res.send({id:1, Message:"Welcome to the shop"})
-})
-
-
+// routers
+app.use("/api/school", schoolRouter);
 const PORT = process.env.PORT;
 app.listen(PORT,()=>{
     console.log("server is running at PORT =>", PORT)
