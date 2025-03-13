@@ -1,3 +1,4 @@
+const schoolRouter = require("./routers/school.router.js");
 require('dotenv').config()
 const express = require('express');
 const cors = require('cors');
@@ -5,7 +6,6 @@ const mongoose = require('mongoose');
 const cookieparser = require('cookie-parser');
 
 
-const schoolRouter = require("../routers/school.router");
 const app = express();
 app.use(cors());
 app.use(express.json());

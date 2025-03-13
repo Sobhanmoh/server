@@ -1,12 +1,12 @@
-require('dotenv').config();
 const formidable = require('formidable');
 const path = require('path');
 const fs = require('fs');
-const bycrypt = require('bcryptjs');
+const bycrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const School = require('../models/school.model');
 const { mainModule } = require('process');
+require('dotenv').config();
 
 
 module.exports = {
